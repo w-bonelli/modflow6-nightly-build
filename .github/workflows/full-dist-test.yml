@@ -6,7 +6,7 @@ on:
     branches:
       - master
       - develop
-      - ci-diagnose*
+      - ci-diagnose
     paths-ignore:
       - '**.md'
   pull_request:
@@ -54,7 +54,7 @@ jobs:
   make_dist:
     name: Make full distribution
     needs: get_version
-    uses: MODFLOW-USGS/modflow6/.github/workflows/release.yml@develop
+    uses: w-bonelli/modflow6/.github/workflows/release.yml@ci-diagnose
     with:
       approve: false
       branch: develop
